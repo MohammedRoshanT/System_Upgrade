@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .cyber-container {
+            text-align: left;
+            position: relative;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .cyber-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ff00;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        .terminal-line {
+            font-family: 'Ubuntu Mono', monospace;
+            color: #00ff00;
+            font-size: 1.4rem;
+            margin: 1rem 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #00ff00;
+        }
+
+        .line1 {
+            width: 35ch;
+            animation: typing 3s steps(35), blink 0.5s step-end infinite alternate;
+        }
+
+        .line2 {
+            width: 32ch;
+            animation: typing 3s steps(32) 3.5s, blink 0.5s step-end infinite 3.5s;
+            animation-fill-mode: both;
+        }
+
+        .line3 {
+            width: 28ch;
+            animation: typing 3s steps(28) 7s, blink 0.5s step-end infinite 7s;
+            animation-fill-mode: both;
+        }
+
+        .email-link {
+            font-family: 'Ubuntu Mono', monospace;
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 3rem;
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid #00ff00;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 10s forwards;
+        }
+
+        .email-link:hover {
+            background: rgba(0, 255, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1 }
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                transparent 50%,
+                rgba(0, 255, 0, 0.05) 51%,
+                transparent 51%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        @media (max-width: 768px) {
+            .cyber-title { font-size: 2rem; }
+            .terminal-line { font-size: 1rem; }
+            .email-link { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="cyber-container">
+        <h1 class="cyber-title">> SYSTEM_UPGRADE</h1>
+        <div class="terminal-line line1">> Initializing core components...</div>
+        <div class="terminal-line line2">> Optimizing system modules...</div>
+        <div class="terminal-line line3">> Preparing launch sequence...</div>
+        <a href="mailto:hello@mrroshan.in" class="email-link">> hello@mrroshan.in</a>
+    </div>
+</body>
+</html>
